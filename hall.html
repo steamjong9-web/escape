@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>복도</title><link rel="stylesheet" href="style.css"></head><body><script src="game.js"></script>
+<script>
+run({id:"hall",title:"복도",steps:[{t:"fn",f:()=>{const v=S.v,both=v.c11&&v.c12;
+ui(`<h2>🚪 복도</h2><p>${v.c12&&!v.c11?"📱 학생부: ‘도윤이 저장했다는 소문이 커지고 있어요. 지금 보고할 수 있나요?’ — 서두르고 싶은 마음이 든다.":both?"두 반을 모두 조사했다. 정리할 시간이다.":"어느 반부터 조사할까?"}</p>
+<button class=op data-g=class11.html ${v.c11?"disabled":""}>1학년 1반 — 증거반 ${v.c11?"✅":""}</button><button class=op data-g=class12.html ${v.c12?"disabled":""}>1학년 2반 — 진술반 ${v.c12?"✅":""}</button><button class="op go" data-g=office.html>🏫 교무실로 가서 보고한다</button>`);
+document.querySelectorAll(".op").forEach(b=>b.onclick=()=>{location=b.dataset.g})}}]})
+</script></body></html>
